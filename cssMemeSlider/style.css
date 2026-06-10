@@ -14,7 +14,7 @@ body,html{
 	display: grid;
 	margin: 0.3rem;
 	grid-template-columns: 50% 50% ;
-	width: clamp(18.75rem, 40%, 37.5rem);
+	width: clamp(9rem, 40%, 37.5rem);
 	overflow: hidden;
 	row-gap: 0.6rem;
 }
