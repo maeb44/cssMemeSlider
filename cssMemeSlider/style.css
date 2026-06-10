@@ -1,0 +1,98 @@
+*{
+	box-sizing: border-box;
+}
+body,html{
+	background: black;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+.meme-div{
+	display: grid;
+	margin: 0.3rem;
+	grid-template-columns: 50% 50% ;
+	width: clamp(9rem, 40%, 37.5rem);
+	overflow: hidden;
+	row-gap: 0.6rem;
+}
+	.meme-slider{
+		grid-column-start: 1;
+		grid-column-end: 3;
+		width: 100%;
+		display: flex;
+		transition: transform 1s ease;
+	}
+	.meme-img{
+		width: 100%;
+    object-fit: cover; 
+	}
+	.meme-switch{
+		display: flex;
+		gap:0.3rem;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	.meme-text-div{
+		display: flex;
+		width: 100%;
+		overflow: hidden;
+	}
+	.meme-txt{
+		flex: 1 0 100%;
+		color: white;
+		transition: transform 1s ease;
+	}
+	.meme-btn{
+		appearance: none;
+		background:white;
+    -webkit-appearance: none;
+    width: 0.95rem;
+    height: 0.95rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+		margin: 0;
+    transition: transform 0.5s ease;
+	}
+	.btn-wrapper{
+		  display: inline-block;
+			padding: 0.5rem;
+			line-height: 0;
+	}
+
+	
+	.meme-btn:checked{
+    border: 0.1rem solid #929191;
+		background: transparent;
+	}
+	.meme-btn:hover{
+		background:#7a5c5c;
+		border: #7a5c5c;
+	}
+	body:has(#mem2:checked) .meme-slider,
+	body:has(#mem2:checked) .meme-txt{
+		transform: translateX(-100%);
+	}
+	body:has(#mem3:checked) .meme-slider,
+	body:has(#mem3:checked) .meme-txt{
+		transform: translateX(-200%);
+	}
+	body:has(#mem4:checked) .meme-slider,
+	body:has(#mem4:checked) .meme-txt{
+		transform: translateX(-300%);
+	}
+	@media(max-width:62.43rem) {
+		.meme-text-div{
+			order: 3;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		.meme-switch{
+			justify-content: center;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
